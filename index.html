@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TechZone | Experiment 06</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="site-shell">
+		<header class="topbar">
+			<a class="brand" href="#top" aria-label="TechZone home"><span class="brand-mark">TZ</span><span>tech<span>zone</span></span></a>
+			<nav class="main-nav" aria-label="Main navigation">
+				<a class="active" href="#shop">Shop</a>
+				<a href="#lab">Lab board</a>
+				<a href="#students">Records</a>
+			</nav>
+			<div class="top-actions"><span class="delivery-dot"></span><span>Delivering today</span><button class="cart-button" type="button" aria-label="Shopping cart">Cart <strong>2</strong></button></div>
+		</header>
+
+		<main id="top">
+			<section class="hero" id="shop">
+				<div class="hero-copy">
+					<p class="eyebrow">Experiment 06 / JavaScript timer functions + arrays</p>
+					<h1>Upgrade your<br><em>everyday.</em></h1>
+					<p class="hero-text">Curated electronics for the way you work, play and stay switched on.</p>
+					<div class="hero-actions"><a class="primary-button" href="#products">Explore drops <span>↗</span></a><span class="hero-note">Free delivery over ₹2,000</span></div>
+				</div>
+				<div class="hero-product" aria-label="Featured headphones">
+					<div class="product-glow"></div><img class="hero-headset" src="Pulse%20NC%20Headset.webp" alt="Pulse NC Headset">
+					<div class="hero-sticker">NEW<br><strong>DROP</strong></div>
+					<div class="hero-caption"><span>01 / 04</span><strong>Pulse NC<br>Headphones</strong><span class="price">₹8,499</span></div>
+				</div>
+			</section>
+
+			<section class="status-strip" aria-label="Live store status">
+				<div><span class="status-label">LOCAL TIME</span><strong id="digital-clock">--:--:--</strong></div>
+				<div><span class="status-label">DATE</span><strong id="today-date">Loading date</strong></div>
+				<div><span class="status-label">PROMO CYCLE</span><strong><span class="cycle-dot"></span><span id="promo-name">Signal Orange</span></strong></div>
+				<div class="status-message" id="delivery-message">Orders placed before 4 PM ship today.</div>
+			</section>
+
+			<section class="section" id="products">
+				<div class="section-heading"><div><p class="eyebrow">Fresh from the shelf</p><h2>Best sellers, <em>better.</em></h2></div><a class="text-link" href="#lab">View all products <span>↗</span></a></div>
+				<div class="product-grid">
+					<article class="product-card featured-card"><div class="product-art speaker-art"><img src="Sonic%20Mini%20Speaker.webp" alt="Sonic Mini Speaker"></div><div class="product-info"><div><p class="category">Audio / 01</p><h3>Sonic Mini Speaker</h3></div><strong>₹3,299</strong></div><p class="hover-copy" id="hover-copy" onmouseover="increaseFontSize()" onmouseout="decreaseFontSize()">Move your mouse here to inspect the product note.</p></article>
+					<article class="product-card"><div class="product-art watch-art"><img src="Arc%20Fit%20Watch.jpg" alt="Arc Fit Watch"></div><div class="product-info"><div><p class="category">Wearables / 02</p><h3>Arc Fit Watch</h3></div><strong>₹5,999</strong></div><p class="product-note">Health tracking, minus the noise.</p></article>
+					<article class="product-card"><div class="product-art keyboard-art"><img src="Mono%20Keys%2075.jpg" alt="Mono Keys 75 keyboard"></div><div class="product-info"><div><p class="category">Desk / 03</p><h3>Mono Keys 75</h3></div><strong>₹6,499</strong></div><p class="product-note">A calmer desk starts here.</p></article>
+				</div>
+			</section>
+
+			<section class="lab-section" id="lab">
+				<div class="lab-intro"><p class="eyebrow">Interactive lab board</p><h2>Small scripts.<br><em>Real behavior.</em></h2><p>Every interaction below is wired to a JavaScript event or timer from the experiment brief.</p></div>
+				<div class="lab-controls">
+					<div class="control-block"><div class="control-heading"><span class="control-number">01</span><div><h3>Product motion test</h3><p>Start and stop the featured product ticker.</p></div></div><div class="motion-stage"><div class="moving-product" id="moving-product">TZ</div><span class="stage-line"></span></div><div class="button-row"><button class="small-button" type="button" onclick="startMotion()">Start motion</button><button class="small-button outline" type="button" onclick="stopMotion()">Stop</button></div></div>
+					<div class="control-block color-block"><div class="control-heading"><span class="control-number">02</span><div><h3>30-second color cycle</h3><p>Promo background changes on every interval.</p></div></div><div class="color-preview"><span id="color-swatch"></span><div><strong id="color-name">Signal Orange</strong><small>Current promo color</small></div></div><div class="button-row"><button class="small-button outline" type="button" onclick="setBackgroundColor()">Change now</button></div></div>
+				</div>
+			</section>
+
+			<section class="section records-section" id="students"><div class="section-heading"><div><p class="eyebrow">Array of objects</p><h2>Student <em>records.</em></h2></div><span class="record-count" id="record-count">0 entries</span></div><div class="table-wrap"><table><thead><tr><th>Name</th><th>Register number</th><th>Birth year</th><th>Category</th></tr></thead><tbody id="student-list"></tbody></table></div></section>
+		</main>
+		<footer><a class="brand" href="#top"><span class="brand-mark">TZ</span><span>tech<span>zone</span></span></a><p>Experiment 06 / Timing events, Date object, class and arrays</p><p>© 2026 TechZone</p></footer>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
